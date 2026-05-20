@@ -1,14 +1,14 @@
-const { v4: uuidv4 } = require('uuid');
+const { randomUUID } = require('crypto');
 
 /**
  * Task Model
  * Design Pattern: Factory Pattern
- * Why: مركزة منطق إنشاء المهام، التحقق من البيانات، 
+ * Why: مركزة منطق إنشاء المهام، التحقق من البيانات،
  * وضمان القيم الافتراضية في مكان واحد.
  */
 class Task {
   constructor({ id, title, description, deadline, priority, status, createdAt, updatedAt }) {
-    this.id = id || uuidv4();
+    this.id = id || randomUUID();
     this.title = title;
     this.description = description || '';
     this.deadline = deadline;

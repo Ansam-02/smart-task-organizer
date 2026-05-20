@@ -1,29 +1,33 @@
 {
   "name": "smart-task-organizer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
+  "description": "A simple application that helps users manage daily tasks",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js",
+    "test": "jest --verbose --forceExit",
+    "test:coverage": "jest --verbose --forceExit --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": ["src/**/*.js", "!src/app.js"]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ansam-02/smart-task-organizer.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["task", "organizer", "todo"],
+  "author": "Ansam",
+  "license": "MIT",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Ansam-02/smart-task-organizer/issues"
   },
   "homepage": "https://github.com/Ansam-02/smart-task-organizer#readme",
   "dependencies": {
-    "express": "^5.2.1",
-    "uuid": "^14.0.0"
+    "express": "^5.2.1"
   },
   "devDependencies": {
     "jest": "^30.3.0",
